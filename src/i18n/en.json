@@ -11,6 +11,10 @@
     "appleMenuLabel": "Apple menu",
     "appleMenuTitle": "Quentin",
     "switchLang": "Switch to the French version",
+    "siteLabel": "Geology · exploration & resources",
+    "footerNote": "Field notes · Saône-et-Loire, France",
+    "north": "North",
+    "scale": "Indicative scale",
     "sections": {
       "about": "About",
       "system": "Info",
@@ -46,12 +50,21 @@
   "experience": {
     "windowTitle": "Experience",
     "subtitle": "An unconventional path: locksmith turned exploration geologist.",
+    "legendTitle": "Experience types",
+    "legend": [
+      { "stratum": "internship", "label": "University internship" },
+      { "stratum": "field-campaign", "label": "Field campaign" },
+      { "stratum": "employment", "label": "Employment" },
+      { "stratum": "independent", "label": "Self-employed" },
+      { "stratum": "craft", "label": "Skilled trade" }
+    ],
     "items": [
       {
         "period": "Feb – Jul 2026",
         "org": "Lyon Geology Laboratory (LGL)",
         "role": "M2 internship — Structural approach to the Coiron volcanic system",
         "kind": "Internship",
+        "stratum": "internship",
         "bullets": [
           "Structural, geomorphological and petrological approach",
           "Fieldwork, QGIS mapping and DEM processing",
@@ -63,6 +76,7 @@
         "org": "BRGM Explore",
         "role": "IRM geochemical campaign",
         "kind": "Contract",
+        "stratum": "field-campaign",
         "bullets": [
           "Logistics manager, Occitanie team",
           "Technician: stream sediment sampling; rock exploration and sampling at former mining sites"
@@ -73,6 +87,7 @@
         "org": "BRGM — Pessac branch",
         "role": "M1 internship — Viscous flow modelling",
         "kind": "Internship",
+        "stratum": "internship",
         "bullets": [
           "Literature review: understanding the strategies of the different approaches (rock/fluid mechanics)",
           "State of the art of models developed for solid or fluid phases"
@@ -83,6 +98,7 @@
         "org": "EPOC Laboratory, University of Bordeaux",
         "role": "L3 internship — Structural geology of the Cyclades collapse basin",
         "kind": "Internship",
+        "stratum": "internship",
         "bullets": [
           "Mapping of collapse geometries along the coastline of Milos Island",
           "Discussion of the gravitational trend in volcaniclastic rocks and its place within the state of the art of the Cyclades tectonic system"
@@ -93,6 +109,7 @@
         "org": "SARL Serrure Pro, Lyon",
         "role": "Locksmith, door and window fitter — Site manager",
         "kind": "Employment",
+        "stratum": "employment",
         "bullets": []
       },
       {
@@ -100,6 +117,7 @@
         "org": "Lyon, Bordeaux, Chalon-sur-Saône",
         "role": "Self-employed locksmith — Side activity",
         "kind": "Self-employed",
+        "stratum": "independent",
         "bullets": []
       },
       {
@@ -107,6 +125,7 @@
         "org": "Multiple employers and locations",
         "role": "Carpenter — Openings and closures",
         "kind": "Craft",
+        "stratum": "craft",
         "bullets": []
       }
     ]

@@ -16,15 +16,18 @@ interface Props {
 const { locale } = Astro.props;
 ---
 
-<!-- L'ordre du DOM = ordre mobile ; sur desktop (≥1120px) la grille 3 colonnes
-     forme des paires About/Info, Parcours/Langues, Formation/Lisez-moi, Compétences/Contact -->
-<div class="desktop-grid">
-  <About locale={locale} />
-  <System locale={locale} />
+<!-- L'ordre du DOM garde le parcours de lecture cohérent sur mobile et desktop. -->
+<div class="page-content">
+  <div class="intro-grid">
+    <About locale={locale} />
+    <System locale={locale} />
+  </div>
   <Experience locale={locale} />
-  <Languages locale={locale} />
-  <Education locale={locale} />
-  <Profile locale={locale} />
-  <Skills locale={locale} />
+  <div class="section-grid">
+    <Education locale={locale} />
+    <Skills locale={locale} />
+    <Languages locale={locale} />
+    <Profile locale={locale} />
+  </div>
   <Contact locale={locale} />
 </div>

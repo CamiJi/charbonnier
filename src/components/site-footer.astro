@@ -1,0 +1,23 @@
+---
+import { getContent, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getContent(locale);
+---
+
+<footer class="site-footer">
+  <p>{t.ui.footerNote}</p>
+  <div class="map-colophon" role="img" aria-label={`${t.ui.scale}: 0–1`}>
+    <span class="scale-caption">{t.ui.scale}</span>
+    <span class="scale-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="scale-ticks" aria-hidden="true">0&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+  </div>
+  <div class="north-arrow" role="img" aria-label={t.ui.north}>
+    <span aria-hidden="true">↑</span>
+    <b>{t.ui.north.slice(0, 1)}</b>
+  </div>
+</footer>

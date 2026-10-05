@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import MenuBar from '../components/menu-bar.astro';
+import SiteHeader from '../components/site-header.astro';
+import SiteFooter from '../components/site-footer.astro';
 import Desktop from '../components/desktop.astro';
 
 const locale = 'fr' as const;
 ---
 
 <Layout locale={locale}>
-  <MenuBar slot="menu" locale={locale} />
+  <SiteHeader slot="header" locale={locale} />
   <Desktop locale={locale} />
+  <SiteFooter slot="footer" locale={locale} />
 </Layout>

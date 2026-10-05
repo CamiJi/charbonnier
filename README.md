@@ -2,13 +2,13 @@
 
 CV monopage bilingue (FR/EN) de Quentin Charbonnier — géologue de l'exploration et
 des ressources. Architecture dupliquée depuis `camilleaubert.com` (Astro 6 + Tailwind 4,
-modèle de contenu JSON), redessinée en **esthétique Mac OS 9 / System 7**.
+modèle de contenu JSON), habillée d'une **identité naturaliste et cartographique**.
 
 ## Stack
 
 - **Astro 6** (site statique, TypeScript strict) — Node **≥ 22.12** requis (`.nvmrc`)
 - **Tailwind CSS 4** (`@theme` : tokens couleur/typo/ombres dans `src/styles/global.css`)
-- **Silkscreen** (Google Font auto-hébergée via `@fontsource`) pour le chrome ; Geneva/Verdana en texte courant
+- **Source Serif 4**, **Inter** et **IBM Plex Mono** (auto-hébergées via `@fontsource`)
 - `@astrojs/sitemap` + `robots.txt`
 
 > ⚠️ `package.json` pinné : `astro@6.3.1`, `@tailwindcss/vite@4.3.0`, `tailwindcss@4.3.0`
@@ -34,18 +34,19 @@ src/
 ├── pages/index.astro  → version FR (/)
 ├── pages/en/index.astro → version EN (/en/)
 ├── components/
-│   ├── menu-bar.astro → barre de menus fixe (menu Apple, sections, FR|EN, horloge)
-│   ├── mac-window.astro → chrome de fenêtre System 7 (titre rayé, boîtes, ombre dure)
-│   └── sections/      → les 8 fenêtres (About, Infos système, Parcours, Langues…)
-├── scripts/menu.ts    → horloge, section active (IntersectionObserver), menu Apple
-└── styles/global.css  → tokens + `.desktop-grid` (grille bureau 3 colonnes)
+│   ├── site-header.astro / site-footer.astro → navigation, coordonnées, cartouche
+│   ├── section-panel.astro → titre éditorial et repère cartographique
+│   └── sections/      → présentation, log stratigraphique, formation, contact…
+├── public/contours.svg → courbes de niveau décoratives (aria-hidden)
+└── styles/global.css  → tokens, trames stratigraphiques, grille responsive
 ```
 
 ## Contenu
 
 Tout le texte vit dans `src/i18n/fr.json` et `src/i18n/en.json` (mêmes clés) :
 expérience, formation, compétences, langues, qualités, centres d'intérêt, contact.
-Ajouter une section = ajouter les clés dans les 2 JSON + une fenêtre dans
+Chaque expérience porte un identifiant de strate qui associe sa trame à la légende.
+Ajouter une section = ajouter les clés dans les 2 JSON + un panneau dans
 `src/components/desktop.astro`.
 
 ## Déploiement
@@ -53,5 +54,4 @@ Ajouter une section = ajouter les clés dans les 2 JSON + une fenêtre dans
 URL publique définie dans `config-domain.mjs` (et `public/robots.txt`) :
 `https://camiji.github.io/charbonnier/`. `BASE_PATH` gère le sous-chemin GitHub Pages.
 Le workflow `.github/workflows/deploy.yml` publie automatiquement `dist/` sur chaque
-push vers `main`. Dans les paramètres du dépôt GitHub, activer **Settings → Pages →
-Build and deployment → Source: GitHub Actions**.
+push vers `main` ; il active également GitHub Pages lors du premier déploiement.

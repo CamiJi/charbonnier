@@ -1,5 +1,5 @@
 ---
-import MacWindow from '../mac-window.astro';
+import SectionPanel from '../section-panel.astro';
 import { getContent, type Locale } from '../../i18n';
 
 interface Props {
@@ -10,23 +10,38 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<MacWindow id="experience" title={t.experience.windowTitle} index={2} span="span-2">
+<SectionPanel id="experience" title={t.experience.windowTitle} kicker={locale === 'fr' ? 'LOGUE STRATIGRAPHIQUE / 2010—2026' : 'STRATIGRAPHIC LOG / 2010—2026'} class="experience-panel">
   <p class="section-lede">{t.experience.subtitle}</p>
-  <ol class="entries mt-4 m-0 p-0 list-none">
-    {t.experience.items.map((item) => (
-      <li class="entry">
-        <div class="entry-head">
-          <span class="entry-period">{item.period}</span>
-          <span class="kind-chip">{item.kind}</span>
-        </div>
-        <p class="entry-org m-0">{item.org}</p>
-        <p class="entry-role m-0">{item.role}</p>
-        {item.bullets.length > 0 && (
-          <ul class="bullets mt-1">
-            {item.bullets.map((bullet) => <li>{bullet}</li>)}
-          </ul>
-        )}
+  <div class="strata-legend" role="group" aria-label={t.experience.legendTitle}>
+    <p class="legend-title">{t.experience.legendTitle}</p>
+    <ul>
+      {t.experience.legend.map((item) => (
+        <li data-stratum={item.stratum}>
+          <span class="legend-pattern" aria-hidden="true"></span>
+          <span>{item.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <ol class="stratigraphy">
+    {t.experience.items.map((item, index) => (
+      <li class="strata-unit" data-stratum={item.stratum}>
+        <span class="unit-pattern" aria-hidden="true"></span>
+        <article class="unit-copy">
+          <header class="unit-meta">
+            <p class="entry-period">{item.period}</p>
+            <span class="unit-kind">{item.kind}</span>
+          </header>
+          <h3 class="entry-org">{item.org}</h3>
+          <p class="entry-role">{item.role}</p>
+          {item.bullets.length > 0 && (
+            <ul class="experience-details">
+              {item.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          )}
+        </article>
+        <span class="unit-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
       </li>
     ))}
   </ol>
-</MacWindow>
+</SectionPanel>

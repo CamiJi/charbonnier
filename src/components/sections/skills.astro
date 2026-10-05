@@ -1,5 +1,5 @@
 ---
-import MacWindow from '../mac-window.astro';
+import SectionPanel from '../section-panel.astro';
 import { getContent, type Locale } from '../../i18n';
 
 interface Props {
@@ -10,15 +10,15 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<MacWindow id="skills" title={t.skills.windowTitle} index={6} span="span-2">
-  <div class="grid gap-5 sm:grid-cols-2">
+<SectionPanel id="skills" title={t.skills.windowTitle} kicker={locale === 'fr' ? 'OUTILS & SAVOIR-FAIRE' : 'TOOLS & METHODS'}>
+  <div class="skills-grid">
     {t.skills.groups.map((group) => (
-      <div>
+      <section class="skill-group">
         <h3 class="group-title">{group.name}</h3>
-        <div class="tags">
-          {group.items.map((item) => <span class="tag">{item}</span>)}
-        </div>
-      </div>
+        <ul class="skill-list">
+          {group.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
     ))}
   </div>
-</MacWindow>
+</SectionPanel>

@@ -1,5 +1,5 @@
 ---
-import MacWindow from '../mac-window.astro';
+import SectionPanel from '../section-panel.astro';
 import { getContent, type Locale } from '../../i18n';
 
 interface Props {
@@ -10,15 +10,15 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<MacWindow id="contact" title={t.contact.windowTitle} index={7}>
-  <p class="text-[14.5px] leading-relaxed">{t.contact.text}</p>
-  <dl class="mt-4 m-0">
+<SectionPanel id="contact" title={t.contact.windowTitle} kicker={locale === 'fr' ? 'ÉCHANGE / CONTACT' : 'GET IN TOUCH'} class="contact-panel">
+  <p class="contact-intro">{t.contact.text}</p>
+  <dl class="contact-list">
     {t.contact.items.map((item) => (
-      <div class="info-row">
+      <div class="contact-row">
         <dt>{item.label}</dt>
-        <dd class="m-0">
+        <dd>
           {item.href ? (
-            <a class="underline decoration-dotted underline-offset-4 hover:bg-ink hover:text-window hover:decoration-none" href={item.href}>
+            <a href={item.href}>
               {item.value}
             </a>
           ) : (
@@ -28,5 +28,5 @@ const t = getContent(locale);
       </div>
     ))}
   </dl>
-  <a class="mac-button mac-button--primary mt-5" href={`mailto:${t.ui.email}`}>{t.contact.cta}</a>
-</MacWindow>
+  <a class="text-link" href={`mailto:${t.ui.email}`}>{t.contact.cta}</a>
+</SectionPanel>

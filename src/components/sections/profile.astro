@@ -1,5 +1,5 @@
 ---
-import MacWindow from '../mac-window.astro';
+import SectionPanel from '../section-panel.astro';
 import { getContent, type Locale } from '../../i18n';
 
 interface Props {
@@ -10,14 +10,14 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<MacWindow id="profile" title={t.profile.windowTitle} index={5}>
+<SectionPanel id="profile" title={t.profile.windowTitle} kicker={locale === 'fr' ? 'HORS TERRAIN' : 'BEYOND THE FIELD'}>
   <h3 class="group-title">{t.profile.qualitiesTitle}</h3>
-  <ul class="bullets">
+  <ul class="quality-list">
     {t.profile.qualities.map((quality) => <li>{quality}</li>)}
   </ul>
 
   <h3 class="group-title mt-5">{t.profile.interestsTitle}</h3>
-  <div class="tags">
-    {t.profile.interests.map((interest) => <span class="tag">{interest}</span>)}
-  </div>
-</MacWindow>
+  <ul class="interest-list">
+    {t.profile.interests.map((interest) => <li>{interest}</li>)}
+  </ul>
+</SectionPanel>

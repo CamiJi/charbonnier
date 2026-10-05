@@ -11,6 +11,10 @@
     "appleMenuLabel": "Menu Apple",
     "appleMenuTitle": "Quentin",
     "switchLang": "Passer à la version anglaise",
+    "siteLabel": "Géologie · exploration & ressources",
+    "footerNote": "Parcours de terrain · Saône-et-Loire, France",
+    "north": "Nord",
+    "scale": "Échelle indicative",
     "sections": {
       "about": "À propos",
       "system": "Infos",
@@ -46,12 +50,21 @@
   "experience": {
     "windowTitle": "Parcours professionnel",
     "subtitle": "Cheminement atypique : serrurier reconverti en géologue de l'exploration.",
+    "legendTitle": "Nature des expériences",
+    "legend": [
+      { "stratum": "internship", "label": "Stage universitaire" },
+      { "stratum": "field-campaign", "label": "Campagne de terrain" },
+      { "stratum": "employment", "label": "Emploi salarié" },
+      { "stratum": "independent", "label": "Activité indépendante" },
+      { "stratum": "craft", "label": "Métier artisanal" }
+    ],
     "items": [
       {
         "period": "Fév. – Juill. 2026",
         "org": "Laboratoire de Géologie de Lyon (LGL)",
         "role": "Stage M2 — Approche structurale du système volcanique du Coiron",
         "kind": "Stage",
+        "stratum": "internship",
         "bullets": [
           "Approche structurale, géomorphologique et pétrologique",
           "Travail de terrain, cartographie QGIS et traitement de MNT",
@@ -63,6 +76,7 @@
         "org": "BRGM Explore",
         "role": "Campagne géochimique IRM",
         "kind": "Mission",
+        "stratum": "field-campaign",
         "bullets": [
           "Responsable logistique, équipe Occitanie",
           "Technicien : prélèvement en sédiments de fond de vallée, prospection et prélèvement rocheux sur anciens sites miniers"
@@ -73,6 +87,7 @@
         "org": "BRGM — antenne de Pessac",
         "role": "Stage M1 — Modélisation d'écoulement visqueux",
         "kind": "Stage",
+        "stratum": "internship",
         "bullets": [
           "Revue bibliographique : stratégies des différentes approches (mécanique des roches / des fluides)",
           "État de l'art des modèles développés pour les phases solides et fluides"
@@ -83,6 +98,7 @@
         "org": "Laboratoire EPOC, Université de Bordeaux",
         "role": "Stage L3 — Géologie structurale du bassin d'effondrement des Cyclades",
         "kind": "Stage",
+        "stratum": "internship",
         "bullets": [
           "Cartographie des géométries d'effondrement le long du littoral de l'île de Milos",
           "Analyse de la tendance gravitaire dans les roches volcanoclastiques et sa place dans l'état de l'art du système tectonique des Cyclades"
@@ -93,6 +109,7 @@
         "org": "SARL Serrure Pro, Lyon",
         "role": "Serrurier, poseur de portes et fenêtres — Chef de chantier",
         "kind": "Emploi",
+        "stratum": "employment",
         "bullets": []
       },
       {
@@ -100,6 +117,7 @@
         "org": "Lyon, Bordeaux, Chalon-sur-Saône",
         "role": "Serrurier indépendant — activité annexe",
         "kind": "Indépendant",
+        "stratum": "independent",
         "bullets": []
       },
       {
@@ -107,6 +125,7 @@
         "org": "Divers employeurs et sites",
         "role": "Menuisier — ouvertures et fermetures",
         "kind": "Artisan",
+        "stratum": "craft",
         "bullets": []
       }
     ]

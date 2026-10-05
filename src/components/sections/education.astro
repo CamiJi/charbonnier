@@ -1,5 +1,5 @@
 ---
-import MacWindow from '../mac-window.astro';
+import SectionPanel from '../section-panel.astro';
 import { getContent, type Locale } from '../../i18n';
 
 interface Props {
@@ -10,22 +10,21 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<MacWindow id="education" title={t.education.windowTitle} index={4} span="span-2">
-  <ol class="entries m-0 p-0 list-none">
+<SectionPanel id="education" title={t.education.windowTitle} kicker={locale === 'fr' ? 'ENSEIGNEMENT / 2017—2025' : 'EDUCATION / 2017—2025'}>
+  <ol class="education-list">
     {t.education.items.map((item) => (
-      <li class="entry">
-        <div class="entry-head">
+      <li class="education-entry">
+        <div class="education-meta">
           <span class="entry-period">{item.period}</span>
-          <span class="kind-chip">{item.kind}</span>
         </div>
-        <p class="entry-org m-0">{item.school}</p>
-        <p class="entry-role m-0">{item.degree}</p>
+        <h3 class="entry-org">{item.school}</h3>
+        <p class="entry-role">{item.degree}</p>
         {item.bullets.length > 0 && (
-          <ul class="bullets mt-1">
+          <ul class="education-details">
             {item.bullets.map((bullet) => <li>{bullet}</li>)}
           </ul>
         )}
       </li>
     ))}
   </ol>
-</MacWindow>
+</SectionPanel>

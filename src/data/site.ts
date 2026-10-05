@@ -5,6 +5,9 @@ const prefix = BASE_PATH.replace(/\/$/, '');
 
 export const site = {
   name: 'Quentin Charbonnier',
+  profiles: {
+    linkedIn: 'https://www.linkedin.com/in/quentin-charbonnier-4939552a1/',
+  },
   /** Racine publique du site, sans slash final (gère le sous-chemin GitHub Pages). */
   url: `${SITE_URL}${prefix}`,
 

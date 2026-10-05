@@ -216,6 +216,8 @@
   "contact": {
     "windowTitle": "Contact",
     "text": "Geologist based in Saône-et-Loire, available for exploration, mapping and field data analysis assignments.",
+    "linkedinLabel": "LinkedIn",
+    "linkedinProfile": "Quentin’s LinkedIn profile",
     "items": [
       { "label": "E-mail", "value": "quentin.charbonnier71@gmail.com", "href": "mailto:quentin.charbonnier71@gmail.com" },
       { "label": "Phone", "value": "+33 6 61 16 13 31", "href": "tel:+33661161331" },

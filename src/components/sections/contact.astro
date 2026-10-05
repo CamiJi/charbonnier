@@ -1,6 +1,7 @@
 ---
 import SectionPanel from '../section-panel.astro';
 import { getContent, type Locale } from '../../i18n';
+import { site } from '../../data/site';
 
 interface Props {
   locale: Locale;
@@ -27,6 +28,14 @@ const t = getContent(locale);
         </dd>
       </div>
     ))}
+    <div class="contact-row">
+      <dt>{t.contact.linkedinLabel}</dt>
+      <dd>
+        <a href={site.profiles.linkedIn} target="_blank" rel="me noopener noreferrer">
+          {t.contact.linkedinProfile}
+        </a>
+      </dd>
+    </div>
   </dl>
   <a class="text-link" href={`mailto:${t.ui.email}`}>{t.contact.cta}</a>
 </SectionPanel>

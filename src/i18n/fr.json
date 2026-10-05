@@ -216,6 +216,8 @@
   "contact": {
     "windowTitle": "Contact",
     "text": "Géologue basé en Saône-et-Loire, disponible pour des missions d'exploration, de cartographie et d'analyse de données terrain.",
+    "linkedinLabel": "LinkedIn",
+    "linkedinProfile": "Profil LinkedIn de Quentin",
     "items": [
       { "label": "E-mail", "value": "quentin.charbonnier71@gmail.com", "href": "mailto:quentin.charbonnier71@gmail.com" },
       { "label": "Téléphone", "value": "+33 6 61 16 13 31", "href": "tel:+33661161331" },

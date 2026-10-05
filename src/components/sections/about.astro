@@ -9,7 +9,7 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<section id="about" class="hero-section" aria-labelledby="hero-heading">
+<section id="about" class="hero-section grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-6 max-[600px]:block" aria-labelledby="hero-heading">
   <div class="hero-copy">
     <p class="hero-kicker"><span class="hero-marker" aria-hidden="true"></span>{t.about.role}</p>
     <h1 id="hero-heading" class="hero-name">{t.about.name}</h1>

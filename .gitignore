@@ -4,6 +4,7 @@ dist
 .env.*
 !.env.example
 .astro
+assets/
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json

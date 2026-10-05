@@ -4,15 +4,19 @@ import { site } from '../data/site';
 
 interface Props {
   locale: Locale;
+  alternatePath?: string;
+  currentPath?: string;
 }
 
-const { locale } = Astro.props;
+const { locale, alternatePath, currentPath } = Astro.props;
 const t = getContent(locale);
+const homeHref = (anchor: string): string => `${site.path(locale)}#${anchor}`;
+const activeLanguageHref = currentPath ?? homeHref('about');
 ---
 
 <header class="site-header">
   <div class="header-topline">
-    <a class="wordmark" href="#about" aria-label={t.about.name}>
+    <a class="wordmark" href={homeHref('about')} aria-label={t.about.name}>
       <span class="wordmark-symbol" aria-hidden="true">QC</span>
       <span>{t.about.name}</span>
     </a>
@@ -21,18 +25,19 @@ const t = getContent(locale);
       <span class="coordinate-place">· {locale === 'fr' ? 'Givry, France' : 'Givry, France'}</span>
     </p>
     <nav class="language-switch" aria-label={locale === 'fr' ? 'Langue' : 'Language'}>
-      <a href={site.path('fr')} lang="fr" aria-current={locale === 'fr' ? 'page' : undefined}>FR</a>
+      <a href={locale === 'fr' ? activeLanguageHref : (alternatePath ?? site.path('fr'))} lang="fr" aria-current={locale === 'fr' ? 'page' : undefined}>FR</a>
       <span aria-hidden="true">/</span>
-      <a href={site.path('en')} lang="en" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
+      <a href={locale === 'en' ? activeLanguageHref : (alternatePath ?? site.path('en'))} lang="en" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
     </nav>
   </div>
   <div class="header-bottomline">
     <p>{t.ui.siteLabel}</p>
     <nav class="section-nav" aria-label={t.ui.menuLabel}>
-      <a href="#experience">{t.ui.sections.experience}</a>
-      <a href="#education">{t.ui.sections.education}</a>
-      <a href="#skills">{t.ui.sections.skills}</a>
-      <a href="#contact">{t.ui.sections.contact}</a>
+      <a href={homeHref('experience')}>{t.ui.sections.experience}</a>
+      <a href={homeHref('work')}>{t.ui.sections.work}</a>
+      <a href={homeHref('education')}>{t.ui.sections.education}</a>
+      <a href={homeHref('skills')}>{t.ui.sections.skills}</a>
+      <a href={homeHref('contact')}>{t.ui.sections.contact}</a>
     </nav>
   </div>
 </header>

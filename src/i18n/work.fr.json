@@ -1,0 +1,185 @@
+{
+  "title": "Travaux",
+  "subtitle": "Rapports de terrain, expériences et notes de géologie — du massif de la Montagne Noire au Coiron.",
+  "kicker": "RAPPORTS / TERRAIN / ARTICLES",
+  "groups": {
+    "reports": "Rapports & publications",
+    "fieldwork": "Expérience de terrain",
+    "blog": "Articles de blog"
+  },
+  "legendTitle": "Types de travaux",
+  "legend": [
+    { "code": "report", "label": "RAPPORT" },
+    { "code": "stage", "label": "STAGE" },
+    { "code": "self-review", "label": "AUTOCRITIQUE" },
+    { "code": "blog", "label": "BILLET" }
+  ],
+  "interactions": {
+    "title": "Réagir ou partager",
+    "intro": "Une remarque ou une question sur ce billet ? Écrivez à Quentin.",
+    "comment": "Commenter par e-mail",
+    "share": "Partager par e-mail"
+  },
+  "report": {
+    "typeCode": "report",
+    "date": "M2 · 2024–2025",
+    "title": "Le contrôle structural de la minéralisation à Salsigne",
+    "summary": "Une étude de deux affleurements autour de l’ancienne mine de Salsigne, consacrée aux liens entre failles, veines de quartz et circulation des fluides hydrothermaux.",
+    "linkLabel": "Lire le billet"
+  },
+  "fieldwork": [
+    {
+      "typeCode": "stage",
+      "date": "FÉV.–JUIL. 2026",
+      "title": "Observer un dyke dans le système volcanique du Coiron",
+      "summary": "Des vues de terrain accompagnent une réflexion sur la géométrie d’un dyke, ses contacts et sa place dans une approche structurale du massif.",
+      "image": "coiron-outcrop-04.webp",
+      "imageWidth": 1280,
+      "imageHeight": 960,
+      "imageAlt": "Vue d’ensemble d’un affleurement rocheux sous un ciel dégagé.",
+      "linkLabel": "Parcourir le carnet de terrain",
+      "article": "coiron"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "salsigne",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min",
+      "title": "À Salsigne, suivre les structures qui guident les fluides",
+      "summary": "Deux sites de terrain, des veines de quartz et une question : comment l’architecture tectonique a-t-elle pu favoriser la circulation et le piégeage des fluides minéralisateurs ?",
+      "image": "",
+      "imageAlt": ""
+    },
+    {
+      "slug": "coiron",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min",
+      "title": "Au Coiron, lire un dyke dans le paysage volcanique",
+      "summary": "Du panorama au détail de l’affleurement : quelques repères pour observer la géométrie d’un dyke et formuler les bonnes questions de terrain.",
+      "image": "coiron-outcrop-01.webp",
+      "imageWidth": 960,
+      "imageHeight": 1280,
+      "imageAlt": "Paroi rocheuse du Coiron observée depuis le pied de l’affleurement."
+    }
+  ],
+  "articles": {
+    "salsigne": {
+      "slug": "salsigne",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min",
+      "title": "À Salsigne, suivre les structures qui guident les fluides",
+      "lead": "Autour de l’ancienne mine de Salsigne, ce rapport de terrain interroge le rôle des structures tectoniques dans la circulation et le piégeage des fluides hydrothermaux associés aux minéralisations.",
+      "sections": [
+        {
+          "title": "Deux affleurements autour de Salsigne",
+          "paragraphs": [
+            "L’étude compare deux sites de la Montagne Noire : un affleurement à l’ouest de Villardonnel et un autre au nord de Limousis. Situés de part et d’autre du secteur minier, ils offrent deux fenêtres sur le contexte structural régional.",
+            "L’objectif n’est pas de décrire le minerai seul, mais de replacer les observations dans l’architecture des unités rocheuses, des failles et des zones de cisaillement."
+          ]
+        },
+        {
+          "title": "Des indices à l’échelle de l’affleurement",
+          "paragraphs": [
+            "À Villardonnel, les schistes présentent des veines de quartz associées à la schistosité et à des fractures qui la recoupent. Le rapport distingue ainsi plusieurs générations de structures et de silicification.",
+            "À Limousis, une faille et une zone cataclasée sont observées au contact de formations différentes. Des traces d’oxydation sont décrites près de la surface. Ces indices motivent une discussion sur la circulation passée de fluides, sans suffire à eux seuls à en établir l’origine."
+          ]
+        },
+        {
+          "title": "Une interprétation qui reste ouverte",
+          "paragraphs": [
+            "La comparaison suggère que certaines failles, zones de cisaillement et interfaces lithologiques ont pu servir de voies de circulation ou de pièges pour les fluides minéralisateurs.",
+            "Le rapport souligne toutefois une limite importante : les observations ne permettent pas d’identifier avec certitude la source des fluides. Il s’agit d’une interprétation structurale à confronter à d’autres données géologiques et métallogéniques."
+          ]
+        }
+      ],
+      "gallery": [],
+      "sourceNote": "Synthèse fondée sur un rapport de terrain de Master 2 (2024–2025).",
+      "download": {
+        "label": "Télécharger le rapport PDF",
+        "fileSize": "1,03 Mo",
+        "filename": "rapport-salsigne-quentin-charbonnier.pdf"
+      },
+      "references": [
+        "Chardon, D., Aretz, M. & Roques, D. (2020). Reappraisal of Variscan tectonics in the southern French Massif Central. Tectonophysics, 787.",
+        "Lescuyer, J.-L. (2005). Salsigne — example of a late Variscan gold deposit, Southern French Massif Central."
+      ],
+      "backLabel": "Retour aux travaux"
+    },
+    "coiron": {
+      "slug": "coiron",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min",
+      "title": "Au Coiron, lire un dyke dans le paysage volcanique",
+      "lead": "Un dyke est une intrusion tabulaire qui recoupe les roches encaissantes. Au Coiron, l’observation de terrain permet d’en examiner la géométrie et de poser les premières questions sur ses relations avec l’encaissant.",
+      "sections": [
+        {
+          "title": "Du paysage à l’affleurement",
+          "paragraphs": [
+            "Les photographies rassemblent des vues d’ensemble et des détails d’un affleurement volcanique. Elles donnent le contexte visuel d’une observation de dyke réalisée pendant le stage de Master 2 consacré au système volcanique du Coiron.",
+            "La lecture commence par le contact : où l’intrusion rencontre-t-elle la roche encaissante, quelle géométrie dessine-t-elle à l’échelle de l’affleurement, et quelles structures voisines méritent d’être cartographiées ?"
+          ]
+        },
+        {
+          "title": "Documenter avant d’interpréter",
+          "paragraphs": [
+            "Une photographie aide à conserver la mémoire d’un site, mais elle ne remplace pas les mesures de terrain. Orientation, épaisseur, nature des contacts et relations avec les fractures sont à relever pour passer de l’image à une interprétation structurale.",
+            "Ces vues constituent un carnet de terrain, pas à elles seules une démonstration sur l’âge, la composition ou le rôle du dyke dans l’évolution du massif."
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "image": "coiron-outcrop-01.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Paroi rocheuse observée depuis le pied de l’affleurement, avec le ciel en arrière-plan.",
+          "caption": "Vue d’ensemble de l’affleurement."
+        },
+        {
+          "image": "coiron-outcrop-02.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Détail d’une grande surface rocheuse montrant des plans et des contrastes de texture.",
+          "caption": "Les plans visibles invitent à une observation structurale."
+        },
+        {
+          "image": "coiron-outcrop-03.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Paroi rocheuse photographiée en contre-plongée.",
+          "caption": "La géométrie de l’affleurement, replacée dans son contexte."
+        },
+        {
+          "image": "coiron-outcrop-04.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Vue large d’un affleurement rocheux sous un ciel dégagé.",
+          "caption": "Une vue de terrain à l’échelle du paysage."
+        },
+        {
+          "image": "coiron-outcrop-05.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Détail d’une roche avec un stylo bleu comme repère visuel d’échelle.",
+          "caption": "Un repère de terrain aide à apprécier la taille des éléments observés."
+        },
+        {
+          "image": "coiron-outcrop-06.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Affleurement rocheux étendu sur un versant dégagé.",
+          "caption": "Vue générale du relief et de l’exposition des roches."
+        }
+      ],
+      "sourceNote": "Carnet de terrain associé au stage de Master 2 au Laboratoire de Géologie de Lyon (LGL), 2026.",
+      "download": null,
+      "references": [],
+      "backLabel": "Retour aux travaux"
+    }
+  }
+}

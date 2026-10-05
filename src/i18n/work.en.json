@@ -1,0 +1,185 @@
+{
+  "title": "Work",
+  "subtitle": "Field reports, geological observations and research notes — from the Montagne Noire to the Coiron.",
+  "kicker": "REPORTS / FIELDWORK / ARTICLES",
+  "groups": {
+    "reports": "Field reports & publications",
+    "fieldwork": "Field experience",
+    "blog": "Blog posts"
+  },
+  "legendTitle": "Work types",
+  "legend": [
+    { "code": "report", "label": "REPORT" },
+    { "code": "stage", "label": "INTERNSHIP" },
+    { "code": "self-review", "label": "SELF-REVIEW" },
+    { "code": "blog", "label": "BLOG POST" }
+  ],
+  "interactions": {
+    "title": "Comment or share",
+    "intro": "A question or thought about this post? Get in touch with Quentin.",
+    "comment": "Comment by email",
+    "share": "Share by email"
+  },
+  "report": {
+    "typeCode": "report",
+    "date": "MSc · 2024–2025",
+    "title": "Structural control of mineralisation at Salsigne",
+    "summary": "A study of two outcrops around the former Salsigne mine, exploring the links between faults, quartz veins and hydrothermal fluid flow.",
+    "linkLabel": "Read the post"
+  },
+  "fieldwork": [
+    {
+      "typeCode": "stage",
+      "date": "FEB–JUL 2026",
+      "title": "Observing a dyke in the Coiron volcanic system",
+      "summary": "Field photographs support an examination of a dyke’s geometry, its contacts and the questions it raises for structural mapping of the massif.",
+      "image": "coiron-outcrop-04.webp",
+      "imageWidth": 1280,
+      "imageHeight": 960,
+      "imageAlt": "Wide view of a rocky outcrop beneath a clear sky.",
+      "linkLabel": "Open the field notes",
+      "article": "coiron"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "salsigne",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min read",
+      "title": "At Salsigne, following the structures that channel fluids",
+      "summary": "Two field sites, quartz veins and a question: how might the tectonic architecture have enabled mineralising fluids to flow and become trapped?",
+      "image": "",
+      "imageAlt": ""
+    },
+    {
+      "slug": "coiron",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min read",
+      "title": "Reading a dyke in the Coiron volcanic landscape",
+      "summary": "From the wider landscape to the outcrop: field cues for observing a dyke’s geometry and asking better questions on site.",
+      "image": "coiron-outcrop-01.webp",
+      "imageWidth": 960,
+      "imageHeight": 1280,
+      "imageAlt": "Rock face in the Coiron viewed from the foot of the outcrop."
+    }
+  ],
+  "articles": {
+    "salsigne": {
+      "slug": "salsigne",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min read",
+      "title": "At Salsigne, following the structures that channel fluids",
+      "lead": "Around the former Salsigne mine, this field report examines how tectonic structures may have influenced the movement and trapping of hydrothermal fluids associated with mineralisation.",
+      "sections": [
+        {
+          "title": "Two outcrops around Salsigne",
+          "paragraphs": [
+            "The study compares two sites in the Montagne Noire: an outcrop west of Villardonnel and another north of Limousis. Located on either side of the mining area, they offer two views of the regional structural setting.",
+            "The aim is not only to describe the ore, but to place field observations within the architecture of the rock units, faults and shear zones."
+          ]
+        },
+        {
+          "title": "Field-scale clues",
+          "paragraphs": [
+            "At Villardonnel, the schists contain quartz veins associated with the foliation and fractures that cut across it. The report distinguishes several generations of structures and silicification.",
+            "At Limousis, a fault and cataclastic zone are observed at the contact between different formations. Oxidation traces are described near the surface. These clues prompt a discussion of past fluid flow, but do not by themselves establish its source."
+          ]
+        },
+        {
+          "title": "An interpretation that remains open",
+          "paragraphs": [
+            "The comparison suggests that some faults, shear zones and lithological boundaries may have acted as pathways or traps for mineralising fluids.",
+            "The report also highlights an important limitation: the observations do not identify the source of the fluids with certainty. This structural interpretation needs to be tested against further geological and metallogenic evidence."
+          ]
+        }
+      ],
+      "gallery": [],
+      "sourceNote": "Summary based on an MSc field report (2024–2025).",
+      "download": {
+        "label": "Download the field report (PDF)",
+        "fileSize": "1.03 MB",
+        "filename": "quentin-charbonnier-salsigne-field-report.pdf"
+      },
+      "references": [
+        "Chardon, D., Aretz, M. & Roques, D. (2020). Reappraisal of Variscan tectonics in the southern French Massif Central. Tectonophysics, 787.",
+        "Lescuyer, J.-L. (2005). Salsigne — example of a late Variscan gold deposit, Southern French Massif Central."
+      ],
+      "backLabel": "Back to work"
+    },
+    "coiron": {
+      "slug": "coiron",
+      "typeCode": "blog",
+      "date": "2026",
+      "readingTime": "2 min read",
+      "title": "Reading a dyke in the Coiron volcanic landscape",
+      "lead": "A dyke is a sheet-like intrusion that cuts across its host rocks. At Coiron, field observation offers a starting point for examining its geometry and asking how it relates to the surrounding rocks.",
+      "sections": [
+        {
+          "title": "From landscape to outcrop",
+          "paragraphs": [
+            "These photographs bring together wide views and close details of a volcanic outcrop. They document a field observation of a dyke made during an MSc internship focused on the Coiron volcanic system.",
+            "The first step is to examine the contact: where does the intrusion meet its host rock, what geometry does it form at outcrop scale, and which neighbouring structures should be mapped?"
+          ]
+        },
+        {
+          "title": "Document before interpreting",
+          "paragraphs": [
+            "A photograph helps preserve a field site, but it cannot replace field measurements. Orientation, thickness, contact relationships and links to fractures must be recorded to move from an image to a structural interpretation.",
+            "These images are field notes, not proof on their own of the dyke’s age, composition or role in the evolution of the massif."
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "image": "coiron-outcrop-01.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Rock face viewed from its base, with the sky behind the outcrop.",
+          "caption": "A wide view of the outcrop."
+        },
+        {
+          "image": "coiron-outcrop-02.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Close view of a large rock surface showing planes and changes in texture.",
+          "caption": "Visible planes invite structural observation."
+        },
+        {
+          "image": "coiron-outcrop-03.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Rock face photographed looking upwards from below.",
+          "caption": "Outcrop geometry in its broader setting."
+        },
+        {
+          "image": "coiron-outcrop-04.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Wide view of a rocky outcrop beneath a clear sky.",
+          "caption": "A field view at landscape scale."
+        },
+        {
+          "image": "coiron-outcrop-05.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Close view of rock with a blue pen as a visual scale reference.",
+          "caption": "A field reference helps convey the scale of observed features."
+        },
+        {
+          "image": "coiron-outcrop-06.webp",
+          "width": 960,
+          "height": 1280,
+          "alt": "Extended rocky outcrop across an open slope.",
+          "caption": "A broad view of the relief and rock exposure."
+        }
+      ],
+      "sourceNote": "Field notes from the 2026 MSc internship at the Lyon Geology Laboratory (LGL).",
+      "download": null,
+      "references": [],
+      "backLabel": "Back to work"
+    }
+  }
+}

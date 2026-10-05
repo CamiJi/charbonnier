@@ -23,22 +23,23 @@ npm run dev      # serveur de dev
 npm run build    # build statique → dist/
 npm run preview  # sert dist/
 npm run check    # astro check (typage)
+npm run optimize:work-images # convertit les sources JPEG de assets/ en WebP sans EXIF
 ```
 
 ## Structure
 
 ```
 config-domain.mjs      → SITE_URL + BASE_PATH (à adapter à l'URL de déploiement)
+assets/                → sources locales ignorées par Git (PDF/JPEG originaux)
+public/
+├── work/              → photos WebP optimisées (EXIF supprimé)
+└── contours.svg       → courbes de niveau décoratives (aria-hidden)
+scripts/optimize-work-images.mjs → reconstruit les WebP depuis assets/
 src/
-├── i18n/              → fr.json / en.json = TOUT le contenu du CV (source de vérité)
-├── pages/index.astro  → version FR (/)
-├── pages/en/index.astro → version EN (/en/)
-├── components/
-│   ├── site-header.astro / site-footer.astro → navigation, coordonnées, cartouche
-│   ├── section-panel.astro → titre éditorial et repère cartographique
-│   └── sections/      → présentation, log stratigraphique, formation, contact…
-├── public/contours.svg → courbes de niveau décoratives (aria-hidden)
-└── styles/global.css  → tokens, trames stratigraphiques, grille responsive
+├── i18n/              → fr.json / en.json (CV) + work.fr/en.json (Travaux et billets)
+├── pages/             → home FR/EN + routes blog FR/EN
+├── components/        → header/footer, section-panels, articles, sections
+└── styles/global.css  → tokens, trames stratigraphiques, cartes Work, responsive
 ```
 
 ## Contenu
@@ -46,8 +47,12 @@ src/
 Tout le texte vit dans `src/i18n/fr.json` et `src/i18n/en.json` (mêmes clés) :
 expérience, formation, compétences, langues, qualités, centres d'intérêt, contact.
 Chaque expérience porte un identifiant de strate qui associe sa trame à la légende.
-Ajouter une section = ajouter les clés dans les 2 JSON + un panneau dans
-`src/components/desktop.astro`.
+Les travaux et les billets (Salsigne, Coiron) vivent dans `src/i18n/work.fr.json` et
+`work.en.json`. Les originaux JPEG de `assets/` ne sont jamais servis par le site ; seuls
+les WebP générés dans `public/work/` sont publiés. Le PDF source reste dans `assets/` et
+sa copie de téléchargement est `public/work/salsigne-field-report.pdf`.
+Les routes d’articles sont générées à partir des slugs présents dans les deux fichiers
+Work (`/blog/{slug}/` et `/en/blog/{slug}/`).
 
 ## Déploiement
 

@@ -18,7 +18,8 @@
     "sections": {
       "about": "À propos",
       "system": "Infos",
-      "experience": "Parcours",
+        "experience": "Parcours",
+        "work": "Travaux",
       "education": "Formation",
       "skills": "Compétences",
       "languages": "Langues",

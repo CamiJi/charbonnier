@@ -1,0 +1,115 @@
+---
+import SectionPanel from '../section-panel.astro';
+import { getWorkContent, type Locale } from '../../i18n';
+import { site } from '../../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const work = getWorkContent(locale);
+const articleHref = (slug: string): string =>
+  site.asset(`${locale === 'fr' ? '' : 'en/'}blog/${slug}/`);
+---
+
+<SectionPanel id="work" title={work.title} kicker={work.kicker} class="work-panel">
+  <p class="work-intro">{work.subtitle}</p>
+
+  <div class="work-legend">
+    <p class="work-legend-title">{work.legendTitle}</p>
+    <ul>
+      {work.legend.map((item) => (
+        <li data-type={item.code}>
+          <span class="work-lithology" aria-hidden="true"></span>
+          <span>{item.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="work-groups">
+    <section class="work-group" aria-labelledby="work-reports-heading">
+      <h3 id="work-reports-heading" class="work-group-title">{work.groups.reports}</h3>
+      <div class="work-list">
+        <article class="work-entry" data-type={work.report.typeCode}>
+          <span class="work-lithology" aria-hidden="true"></span>
+          <div class="work-entry-copy">
+            <p class="work-meta">
+              <span>{work.legend.find((type) => type.code === work.report.typeCode)?.label}</span>
+              <span>{work.report.date}</span>
+            </p>
+            <h4>{work.report.title}</h4>
+            <p class="work-summary">{work.report.summary}</p>
+            <a class="work-link" href={articleHref('salsigne')}>{work.report.linkLabel}<span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-group" aria-labelledby="work-field-heading">
+      <h3 id="work-field-heading" class="work-group-title">{work.groups.fieldwork}</h3>
+      <div class="work-list">
+        {work.fieldwork.map((item) => (
+          <article class:list={['work-entry', item.image && 'work-entry--image']} data-type={item.typeCode}>
+            <span class="work-lithology" aria-hidden="true"></span>
+            {item.image && (
+              <div class="work-entry-image" aria-hidden="true">
+                <img
+                  src={site.asset(`/work/${item.image}`)}
+                  alt=""
+                  width={item.imageWidth}
+                  height={item.imageHeight}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+            <div class="work-entry-copy">
+              <p class="work-meta">
+                <span>{work.legend.find((type) => type.code === item.typeCode)?.label}</span>
+                <span>{item.date}</span>
+              </p>
+              <h4>{item.title}</h4>
+              <p class="work-summary">{item.summary}</p>
+              <a class="work-link" href={articleHref(item.article)}>
+                {item.linkLabel}<span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="work-group" aria-labelledby="work-blog-heading">
+      <h3 id="work-blog-heading" class="work-group-title">{work.groups.blog}</h3>
+      <div class="work-list">
+        {work.posts.map((post) => (
+          <article class:list={['work-entry', post.image && 'work-entry--image']} data-type={post.typeCode}>
+            <span class="work-lithology" aria-hidden="true"></span>
+            {post.image && (
+              <div class="work-entry-image" aria-hidden="true">
+                <img
+                  src={site.asset(`/work/${post.image}`)}
+                  alt=""
+                  width={post.imageWidth}
+                  height={post.imageHeight}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+            <div class="work-entry-copy">
+              <p class="work-meta"><span>{work.legend.find((type) => type.code === post.typeCode)?.label}</span><span>{post.date}</span></p>
+              <h4><a href={articleHref(post.slug)}>{post.title}</a></h4>
+              <p class="work-summary">{post.summary}</p>
+              <a class="work-link" href={articleHref(post.slug)}>
+                {locale === 'fr' ? 'Lire l’article' : 'Read the article'}<span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</SectionPanel>

@@ -1,0 +1,17 @@
+---
+import WorkArticlePage from '../../../components/work-article-page.astro';
+import { getWorkContent, type WorkArticleSlug } from '../../../i18n';
+
+const locale = 'en' as const;
+
+export function getStaticPaths() {
+  return (Object.keys(getWorkContent('en').articles) as WorkArticleSlug[]).map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const slug = Astro.params.slug as WorkArticleSlug;
+const article = getWorkContent(locale).articles[slug];
+---
+
+<WorkArticlePage locale={locale} article={article} />

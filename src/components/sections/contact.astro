@@ -10,7 +10,7 @@ const { locale } = Astro.props;
 const t = getContent(locale);
 ---
 
-<SectionPanel id="contact" title={t.contact.windowTitle} kicker={locale === 'fr' ? 'ÉCHANGE / CONTACT' : 'GET IN TOUCH'} class="contact-panel">
+<SectionPanel id="contact" title={t.contact.windowTitle} kicker={locale === 'fr' ? 'ÉCHANGE / CONTACT' : 'GET IN TOUCH'} class="contact-panel grid grid-cols-1 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
   <p class="contact-intro">{t.contact.text}</p>
   <dl class="contact-list">
     {t.contact.items.map((item) => (

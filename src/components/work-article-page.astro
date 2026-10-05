@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from './site-header.astro';
+import SiteFooter from './site-footer.astro';
+import { getContent, getWorkContent, type Locale, type WorkContent, type WorkArticleSlug } from '../i18n';
+import { site } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  article: WorkContent['articles'][WorkArticleSlug];
+}
+
+const { locale, article } = Astro.props;
+const siteText = getContent(locale);
+const workText = getWorkContent(locale);
+const workPath = `${site.path(locale)}#work`;
+const canonical = site.href(locale, `/blog/${article.slug}/`);
+const alternateLocale: Locale = locale === 'fr' ? 'en' : 'fr';
+const alternateCanonical = site.href(alternateLocale, `/blog/${article.slug}/`);
+const articleType = workText.legend.find((type) => type.code === article.typeCode)?.label ?? '';
+const commentHref = `mailto:${siteText.ui.email}?subject=${encodeURIComponent(article.title)}`;
+const shareHref = `mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(canonical)}`;
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  description: article.lead,
+  author: { '@id': `${site.url}/#person` },
+  mainEntityOfPage: canonical,
+  inLanguage: locale,
+};
+---
+
+<Layout
+  locale={locale}
+  title={`${article.title} — Quentin Charbonnier`}
+  description={article.lead}
+  canonical={canonical}
+  alternateHref={alternateCanonical}
+  pageType="article"
+>
+  <SiteHeader
+    slot="header"
+    locale={locale}
+    currentPath={site.asset(`${locale === 'fr' ? '' : 'en/'}blog/${article.slug}/`)}
+    alternatePath={site.asset(`${locale === 'fr' ? 'en/' : ''}blog/${article.slug}/`)}
+  />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <article class="work-article">
+    <nav class="article-breadcrumb" aria-label={locale === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}>
+      <a href={site.path(locale)}>{locale === 'fr' ? 'Accueil' : 'Home'}</a>
+      <span aria-hidden="true">/</span>
+      <a href={workPath}>{locale === 'fr' ? 'Travaux' : 'Work'}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{articleType}</span>
+    </nav>
+
+    <header class="article-header">
+      <h1>{article.title}</h1>
+      <div class="article-metadata">
+        <span class="article-type" data-type={article.typeCode}>{articleType}</span>
+        <span>{article.date}</span>
+        <span>{article.readingTime}</span>
+      </div>
+      <p class="article-lead">{article.lead}</p>
+    </header>
+
+    <div class="article-body">
+      {article.sections.map((section) => (
+        <section class="article-section">
+          <h2>{section.title}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </section>
+      ))}
+
+      {article.gallery && (
+        <section class="article-gallery" aria-label={locale === 'fr' ? 'Photographies de terrain' : 'Field photographs'}>
+          {article.gallery.map((photo, index) => (
+            <figure>
+              <img
+                src={site.asset(`/work/${photo.image}`)}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                style={`aspect-ratio: ${photo.width} / ${photo.height}`}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="figure-number">Fig. {index + 1}</span>
+                <span>{photo.caption}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </section>
+      )}
+
+      <p class="article-source-note">{article.sourceNote}</p>
+      {article.download && (
+        <a
+          class="article-download"
+          href={site.asset('/work/salsigne-field-report.pdf')}
+          download={article.download.filename}
+        >
+          <span>{article.download.label}</span>
+          <small>{article.download.fileSize}</small>
+        </a>
+      )}
+      {article.references.length > 0 && (
+        <section class="article-references">
+          <h2>{locale === 'fr' ? 'Références' : 'References'}</h2>
+          <ol>{article.references.map((reference) => <li>{reference}</li>)}</ol>
+        </section>
+      )}
+      <aside class="article-actions" aria-labelledby="article-actions-heading">
+        <h2 id="article-actions-heading">{workText.interactions.title}</h2>
+        <p>{workText.interactions.intro}</p>
+        <div class="article-action-links">
+          <a class="article-action article-action--primary" href={commentHref}>{workText.interactions.comment}</a>
+          <a class="article-action" href={shareHref}>{workText.interactions.share}</a>
+        </div>
+      </aside>
+      <a class="article-back-link" href={workPath}>← {article.backLabel}</a>
+    </div>
+  </article>
+
+  <SiteFooter slot="footer" locale={locale} />
+</Layout>

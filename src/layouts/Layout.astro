@@ -8,14 +8,25 @@ import { getContent, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
+  title?: string;
+  description?: string;
+  canonical?: string;
+  alternateHref?: string;
+  pageType?: 'profile' | 'article' | 'website';
 }
 
 const { locale } = Astro.props;
 const t = getContent(locale);
+const title = Astro.props.title ?? t.meta.title;
+const description = Astro.props.description ?? t.meta.description;
 
-const canonical = site.href(locale);
+const canonical = Astro.props.canonical ?? site.href(locale);
 const alternateLocale: Locale = locale === 'fr' ? 'en' : 'fr';
-const alternateHref = site.href(alternateLocale);
+const alternateHref = Astro.props.alternateHref ?? site.href(alternateLocale);
+const pageType = Astro.props.pageType ?? 'profile';
+const xDefaultHref = pageType === 'article'
+  ? (locale === 'fr' ? canonical : alternateHref)
+  : site.href('fr');
 
 const personJsonLd = {
   '@context': 'https://schema.org',
@@ -24,7 +35,7 @@ const personJsonLd = {
   name: 'Quentin Charbonnier',
   jobTitle: 'Exploration and Resources Geologist',
   description: t.meta.description,
-  url: canonical,
+  url: site.href(locale),
   email: 'mailto:quentin.charbonnier71@gmail.com',
   telephone: '+33661161331',
   address: {
@@ -48,20 +59,20 @@ const personJsonLd = {
     <script is:inline>document.documentElement.classList.add('js')</script>
     <link rel="alternate" hreflang={locale} href={canonical} />
     <link rel="alternate" hreflang={alternateLocale} href={alternateHref} />
-    <link rel="alternate" hreflang="x-default" href={site.href('fr')} />
+    <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href={site.asset('/favicon.svg')} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#F2EDE4" />
 
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
     <!-- Open Graph -->
-    <meta property="og:title" content={t.meta.title} />
-    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:type" content="profile" />
+    <meta property="og:type" content={pageType} />
     <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
     <meta property="og:locale:alternate" content={locale === 'fr' ? 'en_GB' : 'fr_FR'} />
     <meta property="og:site_name" content={site.name} />

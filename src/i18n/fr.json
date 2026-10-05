@@ -1,0 +1,207 @@
+{
+  "lang": "fr",
+  "localeLabel": "FR",
+  "meta": {
+    "title": "Quentin Charbonnier — Géologue, exploration & ressources",
+    "description": "Géologue de l'exploration et des ressources (Master STPE) : stages BRGM, LGL, EPOC. Cartographie QGIS, traitement de MNT, métallogénie. CV en ligne."
+  },
+  "ui": {
+    "skipToContent": "Aller au contenu",
+    "menuLabel": "Sections du CV",
+    "appleMenuLabel": "Menu Apple",
+    "appleMenuTitle": "Quentin",
+    "switchLang": "Passer à la version anglaise",
+    "sections": {
+      "about": "À propos",
+      "system": "Infos",
+      "experience": "Parcours",
+      "education": "Formation",
+      "skills": "Compétences",
+      "languages": "Langues",
+      "profile": "Lisez-moi",
+      "contact": "Contact"
+    },
+    "clockLabel": "Heure locale",
+    "email": "quentin.charbonnier71@gmail.com",
+    "phone": "+33 6 61 16 13 31"
+  },
+  "about": {
+    "windowTitle": "À propos de Quentin",
+    "name": "Quentin Charbonnier",
+    "role": "Géologue — Exploration & Ressources",
+    "tagline": "Du terrain aux SIG : cartographie structurale, traitement de MNT et prospection de minéralisations — des Cyclades au massif du Coiron.",
+    "write": "Écrire un message",
+    "call": "Appeler"
+  },
+  "system": {
+    "windowTitle": "Informations système",
+    "rows": [
+      { "label": "Nom", "value": "Quentin Charbonnier" },
+      { "label": "Poste", "value": "Géologue — Exploration & Ressources" },
+      { "label": "Localisation", "value": "Givry (71640), France" },
+      { "label": "Formation", "value": "Master STPE — Sciences de la Terre (2025)" },
+      { "label": "Mobilité", "value": "Permis B — véhicule personnel" }
+    ]
+  },
+  "experience": {
+    "windowTitle": "Parcours professionnel",
+    "subtitle": "Cheminement atypique : serrurier reconverti en géologue de l'exploration.",
+    "items": [
+      {
+        "period": "Fév. – Juill. 2026",
+        "org": "Laboratoire de Géologie de Lyon (LGL)",
+        "role": "Stage M2 — Approche structurale du système volcanique du Coiron",
+        "kind": "Stage",
+        "bullets": [
+          "Approche structurale, géomorphologique et pétrologique",
+          "Travail de terrain, cartographie QGIS et traitement de MNT",
+          "Étude des corrélations entre géochimie et topographie du massif"
+        ]
+      },
+      {
+        "period": "Juin – Sept. 2025",
+        "org": "BRGM Explore",
+        "role": "Campagne géochimique IRM",
+        "kind": "Mission",
+        "bullets": [
+          "Responsable logistique, équipe Occitanie",
+          "Technicien : prélèvement en sédiments de fond de vallée, prospection et prélèvement rocheux sur anciens sites miniers"
+        ]
+      },
+      {
+        "period": "Mai – Juin 2024",
+        "org": "BRGM — antenne de Pessac",
+        "role": "Stage M1 — Modélisation d'écoulement visqueux",
+        "kind": "Stage",
+        "bullets": [
+          "Revue bibliographique : stratégies des différentes approches (mécanique des roches / des fluides)",
+          "État de l'art des modèles développés pour les phases solides et fluides"
+        ]
+      },
+      {
+        "period": "Juin 2023",
+        "org": "Laboratoire EPOC, Université de Bordeaux",
+        "role": "Stage L3 — Géologie structurale du bassin d'effondrement des Cyclades",
+        "kind": "Stage",
+        "bullets": [
+          "Cartographie des géométries d'effondrement le long du littoral de l'île de Milos",
+          "Analyse de la tendance gravitaire dans les roches volcanoclastiques et sa place dans l'état de l'art du système tectonique des Cyclades"
+        ]
+      },
+      {
+        "period": "2018 – 2020",
+        "org": "SARL Serrure Pro, Lyon",
+        "role": "Serrurier, poseur de portes et fenêtres — Chef de chantier",
+        "kind": "Emploi",
+        "bullets": []
+      },
+      {
+        "period": "2017 – 2026",
+        "org": "Lyon, Bordeaux, Chalon-sur-Saône",
+        "role": "Serrurier indépendant — activité annexe",
+        "kind": "Indépendant",
+        "bullets": []
+      },
+      {
+        "period": "2010 – 2017",
+        "org": "Divers employeurs et sites",
+        "role": "Menuisier — ouvertures et fermetures",
+        "kind": "Artisan",
+        "bullets": []
+      }
+    ]
+  },
+  "education": {
+    "windowTitle": "Formation",
+    "items": [
+      {
+        "period": "2023 – 2025",
+        "school": "Université Paul Sabatier — Toulouse 3",
+        "degree": "Master Sciences de la Terre, Planétaires et Environnementales (STPE), parcours Terre",
+        "kind": "Master",
+        "bullets": [
+          "MNT (CloudCompare), imagerie et cartographie 2D (Surfer, QGIS), initiation à la modélisation numérique (Matlab, R, Python)",
+          "Prospection ; traitement de signaux d'onde (ReflexW, Signal)",
+          "Projets d'étude intégrés (géologie, géophysique, pétrologie) sur la distribution du potentiel géothermique du bassin des Cyclades",
+          "Études de terrain orogénique et géomorphologique : Pyrénées (2023), Alpes (2024) — thermochronologie à l'apatite",
+          "Métallogénie : dépôtes sulfures Ni-(Cu), PGE, pegmatites LCT ; intégration des outils carto et géophysiques pour la prospection de gisements"
+        ]
+      },
+      {
+        "period": "2020 – 2023",
+        "school": "Université de Bordeaux — Faculté des Sciences",
+        "degree": "Licence Sciences de la Terre et de l'Environnement",
+        "kind": "Licence",
+        "bullets": []
+      },
+      {
+        "period": "2017",
+        "school": "Centre de formation à l'excellence en serrurerie — Créteil",
+        "degree": "Certification de serrurier : réparation d'urgence et pose",
+        "kind": "Certification",
+        "bullets": []
+      }
+    ]
+  },
+  "skills": {
+    "windowTitle": "Compétences",
+    "groups": [
+      {
+        "name": "Logiciels & SIG",
+        "items": ["QGIS", "CloudCompare (MNT)", "Surfer", "Matlab", "R", "Python", "ReflexW", "Signal"]
+      },
+      {
+        "name": "Analyse structurale",
+        "items": ["Analyse structurale", "Cartographie de terrain", "Imagerie 2D & traitement de MNT", "Géomorphologie"]
+      },
+      {
+        "name": "Hydrothermie & minéralisation",
+        "items": ["Relations fluides hydrothermaux", "Minéralisation et croissance des failles", "Prospection de gisements"]
+      },
+      {
+        "name": "Métallogénie",
+        "items": ["Dépôtes sulfures Ni-(Cu)", "PGE", "Pegmatites LCT", "Intégration cartographie + géophysique"]
+      }
+    ]
+  },
+  "languages": {
+    "windowTitle": "Langues",
+    "items": [
+      { "name": "Français", "level": "Langue maternelle" },
+      { "name": "Anglais", "level": "B2 (CECR)" },
+      { "name": "Allemand", "level": "Compréhension écrite" }
+    ]
+  },
+  "profile": {
+    "windowTitle": "Lisez-moi",
+    "qualitiesTitle": "Qualités",
+    "qualities": [
+      "Autonomie, initiative et proactivité",
+      "Sens de l'organisation",
+      "Management d'équipe",
+      "Souci du détail, patience"
+    ],
+    "interestsTitle": "Centres d'intérêt",
+    "interests": [
+      "Escalade",
+      "Apnée",
+      "VTT enduro",
+      "Touch rugby",
+      "Aviation",
+      "Menuiserie métal & bois",
+      "Environnement",
+      "Technologie / Énergie"
+    ]
+  },
+  "contact": {
+    "windowTitle": "Contact",
+    "text": "Géologue basé en Saône-et-Loire, disponible pour des missions d'exploration, de cartographie et d'analyse de données terrain.",
+    "items": [
+      { "label": "E-mail", "value": "quentin.charbonnier71@gmail.com", "href": "mailto:quentin.charbonnier71@gmail.com" },
+      { "label": "Téléphone", "value": "+33 6 61 16 13 31", "href": "tel:+33661161331" },
+      { "label": "Adresse", "value": "71640 Givry, France", "href": "" },
+      { "label": "Permis", "value": "B — véhicule personnel", "href": "" }
+    ],
+    "cta": "Écrire à Quentin"
+  }
+}

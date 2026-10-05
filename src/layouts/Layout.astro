@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import '@fontsource/silkscreen/latin-400.css';
+import '@fontsource/silkscreen/latin-700.css';
+import { site } from '../data/site';
+import { getContent, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getContent(locale);
+
+const canonical = site.href(locale);
+const alternateLocale: Locale = locale === 'fr' ? 'en' : 'fr';
+const alternateHref = site.href(alternateLocale);
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${site.url}/#person`,
+  name: 'Quentin Charbonnier',
+  jobTitle: 'Exploration and Resources Geologist',
+  description: t.meta.description,
+  url: canonical,
+  email: 'mailto:quentin.charbonnier71@gmail.com',
+  telephone: '+33661161331',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Givry',
+    postalCode: '71640',
+    addressCountry: 'FR',
+  },
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Université Paul Sabatier — Toulouse 3' },
+    { '@type': 'CollegeOrUniversity', name: 'Université de Bordeaux' },
+  ],
+  knowsLanguage: ['fr', 'en', 'de'],
+};
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    <link rel="alternate" hreflang={alternateLocale} href={alternateHref} />
+    <link rel="alternate" hreflang="x-default" href={site.href('fr')} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={site.asset('/favicon.svg')} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
+    <meta property="og:locale:alternate" content={locale === 'fr' ? 'en_GB' : 'fr_FR'} />
+    <meta property="og:site_name" content={site.name} />
+
+    <!-- Structured data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+
+    <slot name="head" />
+  </head>
+
+  <body class="antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-1 focus:left-1 focus:z-[60] focus:px-3 focus:py-1.5 focus:bg-ink focus:text-window focus:border focus:border-ink focus:font-display focus:text-xs"
+    >
+      {t.ui.skipToContent}
+    </a>
+
+    <slot name="menu" />
+
+    <main id="main-content" class="pt-[var(--menu-h)]">
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+---
+/**
+ * Fenêtre System 7 : barre de titre rayée, boîte de fermeture, boîte de zoom,
+ * ombre dure décalée. `index` décale l'animation d'ouverture au chargement.
+ * Le titre est le vrai <h2> de la section (structure sémantique conservée).
+ */
+interface Props {
+  id?: string;
+  title: string;
+  index?: number;
+  /** Classe de placement dans la grille bureau (ex: span-2) */
+  span?: string;
+  /** Niveau de titre sémantique (h1 seule fenêtre About, h2 partout ailleurs) */
+  heading?: 'h1' | 'h2';
+  class?: string;
+}
+
+const { id, title, index = 0, span = '', heading = 'h2', class: className } = Astro.props;
+const Heading = heading;
+---
+
+<section id={id} class:list={['mac-window', span, className]} style={`--i: ${index};`}>
+  <div class="title-bar">
+    <span class="close-box" aria-hidden="true"></span>
+    <span class="title-stripes" aria-hidden="true"></span>
+    <Heading class="window-title">{title}</Heading>
+    <span class="title-stripes" aria-hidden="true"></span>
+    <span class="zoom-box" aria-hidden="true"></span>
+  </div>
+  <div class="window-body">
+    <slot />
+  </div>
+</section>

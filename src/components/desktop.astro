@@ -1,0 +1,30 @@
+---
+import About from './sections/about.astro';
+import System from './sections/system.astro';
+import Experience from './sections/experience.astro';
+import Languages from './sections/languages.astro';
+import Education from './sections/education.astro';
+import Profile from './sections/profile.astro';
+import Skills from './sections/skills.astro';
+import Contact from './sections/contact.astro';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<!-- L'ordre du DOM = ordre mobile ; sur desktop (≥1120px) la grille 3 colonnes
+     forme des paires About/Info, Parcours/Langues, Formation/Lisez-moi, Compétences/Contact -->
+<div class="desktop-grid">
+  <About locale={locale} />
+  <System locale={locale} />
+  <Experience locale={locale} />
+  <Languages locale={locale} />
+  <Education locale={locale} />
+  <Profile locale={locale} />
+  <Skills locale={locale} />
+  <Contact locale={locale} />
+</div>

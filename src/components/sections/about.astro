@@ -1,0 +1,46 @@
+---
+import MacWindow from '../mac-window.astro';
+import { getContent, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getContent(locale);
+---
+
+<MacWindow id="about" title={t.about.windowTitle} index={0} span="span-2" heading="h1">
+  <div class="flex items-start gap-8">
+    <div class="min-w-0 flex-1">
+      <p class="hero-name">{t.about.name}</p>
+      <p class="hero-role">{t.about.role}</p>
+      <p class="hero-tagline">{t.about.tagline}</p>
+      <div class="hero-actions">
+        <a class="mac-button mac-button--primary" href={`mailto:${t.ui.email}`}>{t.about.write}</a>
+        <a class="mac-button" href={`tel:${t.ui.phone.replace(/\s/g, '')}`}>{t.about.call}</a>
+      </div>
+    </div>
+
+    <!-- Le Happy Mac du démarrage : clin d'œil à l'univers Macintosh -->
+    <svg
+      class="hidden md:block flex-none mt-1 opacity-90"
+      width="88"
+      height="88"
+      viewBox="0 0 16 16"
+      shape-rendering="crispEdges"
+      aria-hidden="true"
+    >
+      <rect x="2" y="1" width="12" height="14" fill="#000000"></rect>
+      <rect x="3" y="2" width="10" height="12" fill="#ffffff"></rect>
+      <rect x="4" y="3" width="8" height="7" fill="#000000"></rect>
+      <rect x="5" y="4" width="6" height="5" fill="#eeeeee"></rect>
+      <rect x="6" y="5" width="1" height="1" fill="#000000"></rect>
+      <rect x="9" y="5" width="1" height="1" fill="#000000"></rect>
+      <rect x="5" y="7" width="1" height="1" fill="#000000"></rect>
+      <rect x="10" y="7" width="1" height="1" fill="#000000"></rect>
+      <rect x="6" y="8" width="4" height="1" fill="#000000"></rect>
+      <rect x="7" y="12" width="3" height="1" fill="#000000"></rect>
+    </svg>
+  </div>
+</MacWindow>

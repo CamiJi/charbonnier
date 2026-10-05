@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://camiiji.github.io/charbonnier/sitemap-index.xml

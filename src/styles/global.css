@@ -1,0 +1,581 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Quentin Charbonnier — CV monopage, esthétique Mac OS 9 / System 7
+   Monochrome strict : le seul affordance visuel est l'inversion
+   (sélection = noir plein / texte blanc), comme sur le Mac classique.
+   ============================================================ */
+
+@theme {
+  /* Palette — gris Platinum + dither du bureau classique */
+  --color-desktop-a: #a3a3a3;
+  --color-desktop-b: #adadad;
+  --color-window: #ffffff;
+  --color-chrome: #eeeeee;
+  --color-ink: #000000;
+  --color-ink-soft: #5f5f5f;
+
+  /* Typo — Silkscreen (chrome/fenêtres/menus) + Geneva/Verdana (texte) */
+  --font-display: "Silkscreen", ui-monospace, monospace;
+  --font-body: Geneva, Verdana, "DejaVu Sans", system-ui, sans-serif;
+
+  /* Géométrie : ombres dures décalées, jamais de flou, jamais de radius */
+  --shadow-hard: 4px 4px 0 rgb(0 0 0 / 0.35);
+  --shadow-hard-sm: 2px 2px 0 rgb(0 0 0 / 0.45);
+}
+
+@layer base {
+  :root {
+    --menu-h: 27px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--menu-h) + 12px);
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-desktop-a);
+    /* Dither 2 tons du bureau classique */
+    background-image: repeating-conic-gradient(
+      var(--color-desktop-a) 0% 25%,
+      var(--color-desktop-b) 0% 50%
+    );
+    background-size: 4px 4px;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  *::selection {
+    background: var(--color-ink);
+    color: var(--color-window);
+  }
+
+  :focus-visible {
+    outline: 2px dashed var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   Barre de menus
+   ============================================================ */
+
+.menu-bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--menu-h);
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: var(--color-window);
+  border-bottom: 1px solid var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.menu-scroll {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-link,
+.menu-cell {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  white-space: nowrap;
+  color: var(--color-ink);
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu-link:hover,
+.menu-link:focus-visible,
+.menu-link.is-active,
+.menu-cell:hover,
+.menu-cell:focus-visible,
+.apple-menu[open] > summary {
+  background: var(--color-ink);
+  color: var(--color-window);
+  outline-offset: -2px;
+}
+
+.menu-right {
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+  border-left: 1px solid var(--color-ink);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  gap: 1px;
+}
+.lang-switch [aria-current="true"] {
+  background: var(--color-ink);
+  color: var(--color-window);
+}
+.lang-switch a {
+  padding: 2px 4px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Menu Apple */
+.apple-menu {
+  position: relative;
+  display: flex;
+}
+.apple-menu > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.apple-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.apple-menu-panel {
+  position: absolute;
+  top: 100%;
+  left: 2px;
+  min-width: 210px;
+  background: var(--color-window);
+  border: 1px solid var(--color-ink);
+  box-shadow: var(--shadow-hard);
+  padding: 3px 0;
+  font-size: 12px;
+}
+.apple-menu-panel a,
+.apple-menu-panel span {
+  display: block;
+  padding: 4px 14px;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.apple-menu-panel a:hover,
+.apple-menu-panel a:focus-visible {
+  background: var(--color-ink);
+  color: var(--color-window);
+  outline-offset: -2px;
+}
+.apple-menu-sep {
+  height: 1px;
+  margin: 3px 8px;
+  background: var(--color-ink);
+}
+
+/* ============================================================
+   Fenêtres — chrome System 7 / Platinum
+   ============================================================ */
+
+.mac-window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-window);
+  border: 1px solid var(--color-ink);
+  box-shadow: var(--shadow-hard);
+}
+
+.title-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 5px;
+  border-bottom: 1px solid var(--color-ink);
+  min-height: 19px;
+}
+
+.title-stripes {
+  flex: 1;
+  align-self: stretch;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-ink) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+.close-box,
+.zoom-box {
+  width: 11px;
+  height: 11px;
+  flex: none;
+  background: var(--color-window);
+  border: 1px solid var(--color-ink);
+}
+.zoom-box {
+  position: relative;
+}
+.zoom-box::after {
+  content: "";
+  position: absolute;
+  inset: 2px 2px auto auto;
+  width: 4px;
+  height: 4px;
+  background: var(--color-ink);
+}
+
+.window-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--color-window);
+  padding: 0 8px;
+  white-space: nowrap;
+  max-width: calc(100% - 70px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-body {
+  padding: 16px 18px 18px;
+  flex: 1;
+}
+
+/* ============================================================
+   Entrées de liste (expérience / formation)
+   ============================================================ */
+
+.entry {
+  display: grid;
+  gap: 5px;
+}
+.entry + .entry {
+  border-top: 1px dotted var(--color-ink-soft);
+  margin-top: 14px;
+  padding-top: 14px;
+}
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.entry-org {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.entry-role {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* Sous-titres internes d'une fenêtre */
+.group-title {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Étiquettes (compétences, intérêts) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-family: var(--font-display);
+  font-size: 10px;
+  padding: 4px 7px;
+  border: 1px solid var(--color-ink);
+  background: var(--color-window);
+}
+.tag:hover {
+  background: var(--color-chrome);
+}
+
+/* Accroche de la fenêtre About */
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4.6vw, 38px);
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.hero-role {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.hero-tagline {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 62ch;
+  margin-top: 12px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* ============================================================
+   Widgets (boutons, puces, lignes d'info)
+   ============================================================ */
+
+.mac-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  padding: 8px 14px;
+  background: var(--color-chrome);
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  box-shadow: var(--shadow-hard-sm);
+  text-decoration: none;
+  cursor: pointer;
+}
+.mac-button:hover,
+.mac-button:focus-visible {
+  background: var(--color-ink);
+  color: var(--color-window);
+  outline-offset: -2px;
+}
+.mac-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.mac-button--primary {
+  background: var(--color-window);
+  font-weight: 700;
+}
+
+.kind-chip {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 9px;
+  padding: 2px 6px;
+  border: 1px solid var(--color-ink);
+  background: var(--color-chrome);
+  white-space: nowrap;
+}
+
+.entry-period {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-lede {
+  font-size: 14px;
+  color: var(--color-ink-soft);
+  max-width: 62ch;
+}
+
+/* Liste à puces carrées (pas de puce ronde générique) */
+.bullets {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+.bullets li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: var(--color-ink);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px dotted var(--color-ink-soft);
+  font-size: 13.5px;
+}
+.info-row:last-child {
+  border-bottom: 0;
+}
+.info-row dt {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: var(--color-ink-soft);
+  flex: none;
+}
+.info-row dd {
+  text-align: right;
+}
+
+/* ============================================================
+   Grille « bureau » : fenêtres alignées en haut, écarts = fond visible
+   ============================================================ */
+
+.desktop-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 12px 64px;
+}
+
+@media (min-width: 768px) {
+  .desktop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding: 26px 22px 72px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .desktop-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    max-width: 1360px;
+    margin-inline: auto;
+    padding: 30px 28px 80px;
+  }
+  .span-2 {
+    grid-column: span 2;
+  }
+}
+
+/* ============================================================
+   Animation d'ouverture : les fenêtres s'ouvrent par paliers
+   (une seule séquence au chargement, jamais d'anim décorative)
+   ============================================================ */
+
+html.js .mac-window {
+  animation: window-open 0.16s steps(3) backwards;
+  animation-delay: calc(var(--i, 0) * 55ms);
+}
+
+@keyframes window-open {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Divers — scrollbars, accessibilité, impression
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+::-webkit-scrollbar-track {
+  background: repeating-conic-gradient(
+    var(--color-desktop-a) 0% 25%,
+    var(--color-desktop-b) 0% 50%
+  );
+  background-size: 4px 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-window);
+  border: 1px solid var(--color-ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-chrome);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  /* Un CV imprimé doit sortir propre : pas de chrome système */
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+  .menu-bar,
+  .close-box,
+  .zoom-box,
+  .title-stripes,
+  .no-print {
+    display: none !important;
+  }
+  .desktop-grid {
+    display: block;
+    padding: 0;
+    max-width: none;
+  }
+  .mac-window {
+    border: 0;
+    box-shadow: none;
+    break-inside: avoid-page;
+    margin-bottom: 18pt;
+  }
+  .title-bar {
+    border-bottom: 1pt solid #000;
+    padding: 0 0 4pt;
+    min-height: 0;
+  }
+  .window-title {
+    position: static;
+    transform: none;
+    background: none;
+    padding: 0;
+    font-size: 14pt;
+    max-width: none;
+  }
+  .window-body {
+    padding: 8pt 0 0;
+  }
+  .entry {
+    break-inside: avoid-page;
+  }
+  .mac-button {
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+---
+import MacWindow from '../mac-window.astro';
+import { getContent, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getContent(locale);
+---
+
+<MacWindow id="experience" title={t.experience.windowTitle} index={2} span="span-2">
+  <p class="section-lede">{t.experience.subtitle}</p>
+  <ol class="entries mt-4 m-0 p-0 list-none">
+    {t.experience.items.map((item) => (
+      <li class="entry">
+        <div class="entry-head">
+          <span class="entry-period">{item.period}</span>
+          <span class="kind-chip">{item.kind}</span>
+        </div>
+        <p class="entry-org m-0">{item.org}</p>
+        <p class="entry-role m-0">{item.role}</p>
+        {item.bullets.length > 0 && (
+          <ul class="bullets mt-1">
+            {item.bullets.map((bullet) => <li>{bullet}</li>)}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ol>
+</MacWindow>

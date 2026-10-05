@@ -1,0 +1,207 @@
+{
+  "lang": "en",
+  "localeLabel": "EN",
+  "meta": {
+    "title": "Quentin Charbonnier — Exploration & Resources Geologist",
+    "description": "Exploration and resources geologist (MSc STPE): BRGM, LGL and EPOC internships. QGIS mapping, DEM processing, metallogeny. Online CV."
+  },
+  "ui": {
+    "skipToContent": "Skip to content",
+    "menuLabel": "CV sections",
+    "appleMenuLabel": "Apple menu",
+    "appleMenuTitle": "Quentin",
+    "switchLang": "Switch to the French version",
+    "sections": {
+      "about": "About",
+      "system": "Info",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "profile": "Read Me",
+      "contact": "Contact"
+    },
+    "clockLabel": "Local time",
+    "email": "quentin.charbonnier71@gmail.com",
+    "phone": "+33 6 61 16 13 31"
+  },
+  "about": {
+    "windowTitle": "About Quentin",
+    "name": "Quentin Charbonnier",
+    "role": "Exploration & Resources Geologist",
+    "tagline": "From fieldwork to GIS: structural mapping, DEM processing and mineral exploration — from the Cyclades to the Coiron massif.",
+    "write": "Send a message",
+    "call": "Call"
+  },
+  "system": {
+    "windowTitle": "System Info",
+    "rows": [
+      { "label": "Name", "value": "Quentin Charbonnier" },
+      { "label": "Role", "value": "Exploration & Resources Geologist" },
+      { "label": "Location", "value": "Givry, France (71640)" },
+      { "label": "Education", "value": "MSc Earth Sciences, STPE (2025)" },
+      { "label": "Mobility", "value": "Driving licence B — own vehicle" }
+    ]
+  },
+  "experience": {
+    "windowTitle": "Experience",
+    "subtitle": "An unconventional path: locksmith turned exploration geologist.",
+    "items": [
+      {
+        "period": "Feb – Jul 2026",
+        "org": "Lyon Geology Laboratory (LGL)",
+        "role": "M2 internship — Structural approach to the Coiron volcanic system",
+        "kind": "Internship",
+        "bullets": [
+          "Structural, geomorphological and petrological approach",
+          "Fieldwork, QGIS mapping and DEM processing",
+          "Study of correlations between geochemistry and topography of the massif"
+        ]
+      },
+      {
+        "period": "Jun – Sep 2025",
+        "org": "BRGM Explore",
+        "role": "IRM geochemical campaign",
+        "kind": "Contract",
+        "bullets": [
+          "Logistics manager, Occitanie team",
+          "Technician: stream sediment sampling; rock exploration and sampling at former mining sites"
+        ]
+      },
+      {
+        "period": "May – Jun 2024",
+        "org": "BRGM — Pessac branch",
+        "role": "M1 internship — Viscous flow modelling",
+        "kind": "Internship",
+        "bullets": [
+          "Literature review: understanding the strategies of the different approaches (rock/fluid mechanics)",
+          "State of the art of models developed for solid or fluid phases"
+        ]
+      },
+      {
+        "period": "Jun 2023",
+        "org": "EPOC Laboratory, University of Bordeaux",
+        "role": "L3 internship — Structural geology of the Cyclades collapse basin",
+        "kind": "Internship",
+        "bullets": [
+          "Mapping of collapse geometries along the coastline of Milos Island",
+          "Discussion of the gravitational trend in volcaniclastic rocks and its place within the state of the art of the Cyclades tectonic system"
+        ]
+      },
+      {
+        "period": "2018 – 2020",
+        "org": "SARL Serrure Pro, Lyon",
+        "role": "Locksmith, door and window fitter — Site manager",
+        "kind": "Employment",
+        "bullets": []
+      },
+      {
+        "period": "2017 – 2026",
+        "org": "Lyon, Bordeaux, Chalon-sur-Saône",
+        "role": "Self-employed locksmith — Side activity",
+        "kind": "Self-employed",
+        "bullets": []
+      },
+      {
+        "period": "2010 – 2017",
+        "org": "Multiple employers and locations",
+        "role": "Carpenter — Openings and closures",
+        "kind": "Craft",
+        "bullets": []
+      }
+    ]
+  },
+  "education": {
+    "windowTitle": "Education",
+    "items": [
+      {
+        "period": "2023 – 2025",
+        "school": "Paul Sabatier University — Toulouse 3",
+        "degree": "Master's degree in Earth, Planetary and Environmental Sciences (STPE), Earth track",
+        "kind": "Master's",
+        "bullets": [
+          "DEM (CloudCompare), 2D imaging and mapping (Surfer, QGIS), introduction to numerical modelling (Matlab, R, Python)",
+          "Prospecting; wave signal processing (ReflexW, Signal)",
+          "Integrated study projects combining geological, geophysical and petrological components on the distribution of geothermal potential in the Cyclades basin",
+          "Field-based orogenic and geomorphological studies: Pyrenees (2023), Alps (2024) — apatite thermochronology",
+          "Metallogeny: Ni-(Cu) sulphide deposits, PGE, Cr, LCT pegmatites; integration of mapping and geophysical tools for deposit prospecting"
+        ]
+      },
+      {
+        "period": "2020 – 2023",
+        "school": "University of Bordeaux — Science and Technology College",
+        "degree": "Bachelor's degree in Earth and Environmental Sciences",
+        "kind": "Bachelor's",
+        "bullets": []
+      },
+      {
+        "period": "2017",
+        "school": "Training center for locksmithing excellence — Créteil, France",
+        "degree": "Locksmith certification: Emergency repair and mounting",
+        "kind": "Certificate",
+        "bullets": []
+      }
+    ]
+  },
+  "skills": {
+    "windowTitle": "Skills",
+    "groups": [
+      {
+        "name": "Software & GIS",
+        "items": ["QGIS", "CloudCompare (DEM)", "Surfer", "Matlab", "R", "Python", "ReflexW", "Signal"]
+      },
+      {
+        "name": "Structural analysis",
+        "items": ["Structural analysis", "Field mapping", "2D imaging & DEM processing", "Geomorphology"]
+      },
+      {
+        "name": "Hydrothermal systems & mineralisation",
+        "items": ["Hydrothermal fluid relations", "Mineralisation and fault growth", "Deposit prospecting"]
+      },
+      {
+        "name": "Metallogeny",
+        "items": ["Ni-(Cu) sulphide deposits", "PGE", "LCT pegmatites", "Mapping + geophysics integration"]
+      }
+    ]
+  },
+  "languages": {
+    "windowTitle": "Languages",
+    "items": [
+      { "name": "French", "level": "Native" },
+      { "name": "English", "level": "B2 (CEFR)" },
+      { "name": "German", "level": "Reading comprehension" }
+    ]
+  },
+  "profile": {
+    "windowTitle": "Read Me",
+    "qualitiesTitle": "Personal qualities",
+    "qualities": [
+      "Autonomy, initiative and proactivity",
+      "Organisational skills",
+      "Team management",
+      "Attention to detail, patience"
+    ],
+    "interestsTitle": "Interests",
+    "interests": [
+      "Climbing",
+      "Freediving",
+      "Mountain bike enduro",
+      "Touch rugby",
+      "Aviation",
+      "Metal and wood joinery",
+      "Environment",
+      "Technology / Energy"
+    ]
+  },
+  "contact": {
+    "windowTitle": "Contact",
+    "text": "Geologist based in Saône-et-Loire, available for exploration, mapping and field data analysis assignments.",
+    "items": [
+      { "label": "E-mail", "value": "quentin.charbonnier71@gmail.com", "href": "mailto:quentin.charbonnier71@gmail.com" },
+      { "label": "Phone", "value": "+33 6 61 16 13 31", "href": "tel:+33661161331" },
+      { "label": "Address", "value": "71640 Givry, France", "href": "" },
+      { "label": "Licence", "value": "B — own vehicle", "href": "" }
+    ],
+    "cta": "Email Quentin"
+  }
+}

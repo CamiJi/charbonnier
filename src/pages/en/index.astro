@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MenuBar from '../../components/menu-bar.astro';
+import Desktop from '../../components/desktop.astro';
+
+const locale = 'en' as const;
+---
+
+<Layout locale={locale}>
+  <MenuBar slot="menu" locale={locale} />
+  <Desktop locale={locale} />
+</Layout>

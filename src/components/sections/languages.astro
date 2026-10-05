@@ -1,0 +1,22 @@
+---
+import MacWindow from '../mac-window.astro';
+import { getContent, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getContent(locale);
+---
+
+<MacWindow id="languages" title={t.languages.windowTitle} index={3}>
+  <ul class="m-0 p-0 list-none">
+    {t.languages.items.map((item) => (
+      <li class="entry">
+        <p class="entry-org m-0">{item.name}</p>
+        <p class="text-[13.5px] text-ink-soft m-0">{item.level}</p>
+      </li>
+    ))}
+  </ul>
+</MacWindow>

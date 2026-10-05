@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://camiiji.github.io/charbonnier/sitemap-index.xml
+Sitemap: https://camiji.github.io/charbonnier/sitemap-index.xml

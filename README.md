@@ -51,7 +51,7 @@ Ajouter une section = ajouter les clés dans les 2 JSON + une fenêtre dans
 ## Déploiement
 
 URL publique définie dans `config-domain.mjs` (et `public/robots.txt`) :
-`https://camiiji.github.io/charbonnier/`. `BASE_PATH` gère le sous-chemin GitHub Pages.
+`https://camiji.github.io/charbonnier/`. `BASE_PATH` gère le sous-chemin GitHub Pages.
 Le workflow `.github/workflows/deploy.yml` publie automatiquement `dist/` sur chaque
 push vers `main`. Dans les paramètres du dépôt GitHub, activer **Settings → Pages →
 Build and deployment → Source: GitHub Actions**.
